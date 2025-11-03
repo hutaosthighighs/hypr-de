@@ -6,7 +6,7 @@ You probably need to install these:
 4. nemo
 5. quickshell
 6. stow
-7. xwayland
+7. xorg-xwayland
 8. pipewire
 9. wireplumber
 10. qt5-wayland
@@ -15,3 +15,4 @@ You probably need to install these:
 13. hyprpicker   //optional
 14. hyprpaper
 15. wl-clipboard
+16. uwsm
