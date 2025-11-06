@@ -12,7 +12,8 @@ You probably need to install these:
 10. qt5-wayland
 11. qt6-wayland
 12. playerctl
-13. hyprpicker   //optional
+13. hyprpicker    # optional
 14. hyprpaper
 15. wl-clipboard
 16. uwsm
+17. wofi          # temporary
