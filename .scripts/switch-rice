@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+# Script I made to easily switch between different rices :P
+# Usage:
+#       switch-rice <rice-name>
+#               rice-name = the name of the directory in $RICE_DIR
+
+
+# Base directory containing your rice setups
+RICE_DIR="$HOME/Projects/desktop-environment/"
+
+# Target directory 
+TARGET="$HOME"
+
+RICE="$1"
+
+if [[ -z "$RICE" ]]; then
+    echo "Incorrect syntax: switch-rice <rice-name>"
+    exit 1
+fi
+
+# Ensure directories exist
+if [[ ! -d "$RICE_DIR/$RICE" ]]; then
+    echo "Rice '$RICE' not found in $RICE_DIR"
+    exit 1
+fi
+
+# List all other rices 
+for OTHER in "$RICE_DIR"/*; do
+    [[ "$OTHER" == "$RICE_DIR/$RICE" ]] && continue
+    NAME=$(basename "$OTHER")
+    echo "      :Unstowing $NAME ..."
+    stow -D -v -t "$TARGET" -d "$RICE_DIR" "$NAME" 2>$HOME/hyprlog.txt
+done
+
+# Now stow the new rice
+echo "Stowing $RICE ..."
+stow -v -t "$TARGET" -d "$RICE_DIR" "$RICE" 
+
+echo "Done :3 Active rice: $RICE"
+
+uwsm start -- hyprland.desktop
