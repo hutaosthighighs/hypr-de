@@ -6,18 +6,17 @@
 }
 
 window#waybar {
-  background-image: linear-gradient(to bottom, #141216 100%);
+  background: #141216;
   padding: 0px;
 }
 
 #cpu, 
 #memory,
-#workspaces,
 #pulseaudio,
 #tray,
 #clock
 {
-  background-image: linear-gradient(to bottom, #27232b 100%);
+  background: #27232b;
   color: #d8cab8;
   margin: 6px;
   padding: 4px 8px;
@@ -30,7 +29,19 @@ window#waybar {
   transition-duration: 120ms;
 }
 
+#workspaces {
+  background:#27232b;
+  color: #d8cab8;
+  margin: 6px;
+  padding: 4px 8px;
 
+  border-radius: 20px;
+  border-style: none;
+
+  min-height: 20px;
+
+  transition-duration: 120ms;
+}
 
 #workspaces button {
   transition-duration: 100ms;
@@ -56,7 +67,7 @@ window#waybar {
 
 
 #pulseaudio:hover {
-  background-image: linear-gradient(to bottom, #ac82e9 100%);
+  background: #ac82e9;
   color: #141216;
   transition-duration: 120ms;
 }
@@ -64,13 +75,13 @@ window#waybar {
 
 
 #tray menu {
-  background-color: #141216;
+  background: #141216;
   color: #d8cab8;
   padding: 4px;
 }
 
 #tray menu menuitem {
-  background-image: linear-gradient(to bottom, #27232b 100%);
+  background: #27232b;
 
   margin: 3px;
   color: #d8cab8;
@@ -80,7 +91,7 @@ window#waybar {
 }
 
 #tray menu menuitem:hover {
-  background-image: linear-gradient(to bottom, #27232b 100%);
+  background:#27232b ;
   color: #ac82e9;
   font-weight: bold;
 }
