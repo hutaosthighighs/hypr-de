@@ -1,18 +1,12 @@
 * {
-  font-family: Maple Mono;
+  font-family: "Maple Mono";
   font-size: 14px;
-
-  border-radius: 10px;
   padding: 0px;
   background: transparent;
 }
 
 window#waybar {
   background-image: linear-gradient(to bottom, #141216 100%);
-
-  border-radius: 12px;
-  border-style: none;
-
   padding: 0px;
 }
 
@@ -24,13 +18,14 @@ window#waybar {
 #clock
 {
   background-image: linear-gradient(to bottom, #27232b 100%);
-
   color: #d8cab8;
   margin: 6px;
   padding: 4px 8px;
 
-  border-radius: 8px;
+  border-radius: 20px;
   border-style: none;
+
+  min-height: 80px;
 
   transition-duration: 120ms;
 }
@@ -40,7 +35,6 @@ window#waybar {
 #workspaces button {
   transition-duration: 100ms;
   all: initial; 
-  min-width: 0;
   font-weight: bold;
   color: #d8cab8;
   padding-top: 5px;
