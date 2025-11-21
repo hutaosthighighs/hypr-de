@@ -4,10 +4,15 @@
 
 STEP=$1
 
-CURRENT_BRIGHTNESS=$(ddcutil getvcp 10 | awk -F 'current value = ' 'NF>1 {split($2,a,","); print a[1]}')
+CURRENT_BRIGHTNESS=$(ddcutil --bus=1 getvcp 10 | awk -F 'current value = ' 'NF>1 {split($2,a,","); print a[1]}')
 
 if [[ -z $CURRENT_BRIGHTNESS ]]; then
   echo "could not read brightness"
+  exit 1
+fi
+
+if [[ -z $STEP ]]; then
+  echo $CURRENT_BRIGHTNESS
   exit 1
 fi
 
@@ -20,6 +25,6 @@ fi
 
 # Clamp between 10 and 100
 if [[ $NEW_BRIGHTNESS -gt 100 ]]; then NEW_BRIGHTNESS=100; fi
-if [[ $NEW_BRIGHTNESS -lt 10 ]]; then NEW_BRIGHTNESS=10; fi # Limit it to 10 (as to not make screen completely black)
+if [[ $NEW_BRIGHTNESS -lt 0 ]]; then NEW_BRIGHTNESS=0; fi # Limit it to 10 (as to not make screen completely black)
 
-ddcutil setvcp 10 $NEW_BRIGHTNESS
+ddcutil --bus=1 setvcp 10 $NEW_BRIGHTNESS
