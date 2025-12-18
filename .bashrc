@@ -15,6 +15,6 @@ PS1='[\[\e[36m\]\u@\h\[\e[35m\] \[\e[0m\]|\[\e[35m\] \[\e[93m\]\w\[\e[0m\]]\n\[\
 #start-up commands
 
 
-
+alias nas='ssh bogdan@192.168.0.150'
 alias ff='fastfetch'
 alias playback='pactl load-module module-loopback'
