@@ -35,6 +35,11 @@ post_hook = "hyprctl reload"
 input_path = "./templates/css-template"
 output_path = "~/.config/waybar/colors.css"
 pre_hook = "pkill waybar 2>/dev/null && waybar &"
+
+[templates.kitty]
+input_path = "./templates/kitty-template"
+output_path = "~/.config/kitty/colors.conf"
+
 # This will compare all of the colors inside the array with the color you set as `compare_to`, and returns the closest color to it.
 # You can then use `{{closest_color}}` inside hooks.
 #colors_to_compare = [
