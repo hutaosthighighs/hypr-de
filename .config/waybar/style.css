@@ -1,8 +1,13 @@
+@import "colors.css";
+
 * {
   font-family: "Maple Mono";
-  font-size: 14px;
+  font-size: 16px;
   padding: 0px;
   background: transparent;
+  min-width: 30px;
+  font-weight: bold;
+  
 }
 
 window#waybar {
@@ -10,23 +15,32 @@ window#waybar {
   padding: 0px;
 }
 
+#power{
+  background:#27232b;
+  color: #d8cab8;
+  margin: 6px;
+  padding: 4px 8px;
+  border-radius: 15px;
+  min-height: 30px;
+}
+
 #cpu, 
 #memory,
 #pulseaudio,
 #tray,
-#clock
+#bluetooth
 {
   background: #27232b;
   color: #d8cab8;
   margin: 6px;
   padding: 4px 8px;
 
-  border-radius: 20px;
+  border-radius: 15px;
   border-style: none;
 
   min-height: 80px;
 
-  transition-duration: 120ms;
+  transition-duration: 250ms;
 }
 
 #workspaces {
@@ -34,19 +48,16 @@ window#waybar {
   color: #d8cab8;
   margin: 6px;
   padding: 4px 8px;
+  font-size: 12px;
 
   border-radius: 20px;
   border-style: none;
 
   min-height: 20px;
-
-  transition-duration: 120ms;
 }
 
 #workspaces button {
-  transition-duration: 100ms;
   all: initial; 
-  font-weight: bold;
   color: #d8cab8;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -96,3 +107,44 @@ window#waybar {
   font-weight: bold;
 }
 
+#bluetooth{
+  background: #27232b;
+  color: #d8cab8;
+  margin: 6px;
+  padding: 4px 8px;
+
+  border-radius: 15px;
+  border-style: none;
+
+  min-height: 0px;
+
+  transition-duration: 120ms;
+}
+
+#battery{
+  background: #27232b;
+  color: #d8cab8;
+  margin: 6px;
+  padding: 4px 8px;
+
+  border-radius: 15px;
+  border-style: none;
+
+  min-height: 50px;
+
+  transition-duration: 120ms;  
+}
+
+#clock{
+  background: #27232b;
+  color: #d8cab8;
+  margin: 6px;
+  padding: 4px 8px;
+
+  border-radius: 15px;
+  border-style: none;
+
+  min-height: 50px;
+
+  transition-duration: 120ms;
+}

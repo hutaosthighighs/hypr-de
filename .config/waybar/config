@@ -1,9 +1,9 @@
 {
   "layer": "bottom",
-  "height": 0,
   "position": "left",
 
   "modules-left": [
+    "group/power",
     "cpu",
     "memory"
   ],
@@ -15,6 +15,8 @@
   "modules-right": [
     "pulseaudio",
     "tray",
+    "bluetooth",
+    "battery",
     "clock"
   ],
 
@@ -45,8 +47,8 @@
 
   "pulseaudio": {
     "scroll-step": 2,
-    "max-volume": 150,
-    "format": "{icon} {volume}%",
+    "max-volume": 100,
+    "format": "{icon}\n{volume}",
     "format-icons": [
       "",
       "",
@@ -55,8 +57,7 @@
     "nospacing": 1,
     "format-muted": "",
     "on-double-click": "pavucontrol",
-    "tooltip": false,
-    "rotate" : 270
+    "tooltip": false
   },
 
 
@@ -67,8 +68,52 @@
   },
 
   "clock": {
-    "format": " {:%H:%M}",
+    "format": "{:%H\n%M}",
+    "tooltip": false
+  },
+  "battery":{
+    "format": "{icon}\n{capacity}",
+    "tooltip": "{timeTo}",
+    "format-icons":[
+	    "",
+	    "",
+	    "",
+	    "",
+	    ""
+    ]
+  },
+  "bluetooth":{
+    "format-connected": "\n{device_battery_percentage}",
+    "format-on": "",
     "tooltip": false,
-    "rotate" : 270
+    "on-click":"bluetooth"
+  },
+  "group/power":{
+    "orientation":"vertical",
+    "drawer":{
+      "transition-duration":500,
+      "transition-left-to-right":false
+    },
+    "modules":[
+      "custom/shutdown",
+      "custom/lock",
+      "custom/sleep"
+    ]
+  },
+  "custom/lock":{
+    "format":"",
+    "tooltip": false,
+    "on-click": "hyprlock"
+  },
+  "custom/shutdown":{
+    "format":"",
+    "tooltip":"false",
+    "on-click":"poweroff"
+  },
+  "custom/sleep":{
+    "format":"",
+    "tooltip":false,
+    "on-click": "systemctl suspend"
   }
+
 }

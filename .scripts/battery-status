@@ -9,55 +9,12 @@ if [ -z "$BATPATH" ]; then
 fi
 
 LEVEL=$(cat "$BATPATH/capacity")
-STATUS=$(cat "$BATPATH/status")
 
-# Font Awesome battery icons:
-#      + ⚡ for charging
-if   [ "$LEVEL" -ge 95 ]; then ICON=""
-elif [ "$LEVEL" -ge 70 ]; then ICON=""
-elif [ "$LEVEL" -ge 45 ]; then ICON=""
+if   [ "$LEVEL" -ge 80 ]; then ICON=""
+elif [ "$LEVEL" -ge 60 ]; then ICON=""
+elif [ "$LEVEL" -ge 40 ]; then ICON=""
 elif [ "$LEVEL" -ge 20 ]; then ICON=""
 else ICON=""
 fi
 
-# Charging override
-if [ "$STATUS" = "Charging" ]; then
-    ICON="⚡"
-fi
-
-# Time to full (charging)
-TIME_FULL=""
-TTF="$BATPATH/time_to_full_now"
-if [ "$STATUS" = "Charging" ] && [ -f "$TTF" ]; then
-    RAW=$(cat "$TTF")
-    if [[ "$RAW" =~ ^[0-9]+$ ]] && [ "$RAW" -gt 0 ]; then
-        H=$((RAW / 3600))
-        M=$(((RAW % 3600) / 60))
-        TIME_FULL="${H}h ${M}m"
-    fi
-fi
-
-# Time remaining (discharging)
-TIME_LEFT=""
-TTE="$BATPATH/time_to_empty_now"
-if [ "$STATUS" = "Discharging" ] && [ -f "$TTE" ]; then
-    RAW2=$(cat "$TTE")
-    if [[ "$RAW2" =~ ^[0-9]+$ ]] && [ "$RAW2" -gt 0 ]; then
-        H2=$((RAW2 / 3600))
-        M2=$(((RAW2 % 3600) / 60))
-        TIME_LEFT="${H2}h ${M2}m"
-    fi
-fi
-
-# Build output
-OUT="$ICON  ${LEVEL}%"
-
-if [ -n "$TIME_FULL" ]; then
-    OUT="$OUT  ($TIME_FULL)"
-fi
-
-if [ -n "$TIME_LEFT" ]; then
-    OUT="$OUT  ($TIME_LEFT left)"
-fi
-
-echo "$OUT"
+echo "$ICON  ${LEVEL}"

@@ -29,17 +29,13 @@ intel-ucode
 iperf3
 iwd
 kitty
-libreoffice-still
-libva-nvidia-driver
 linux
 linux-firmware
 linux-headers
 ly
 man-db
-maplemono-otf
 matugen
 mesa-utils
-nano
 nemo
 network-manager-applet
 networkmanager
@@ -47,7 +43,6 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 nss-mdns
-nvidia-dkms
 nwg-look
 obs-studio
 os-prober
@@ -72,7 +67,6 @@ ttf-jetbrains-mono
 ttf-jetbrains-mono-nerd
 unzip
 uwsm
-vesktop
 vim
 vivaldi
 waybar
