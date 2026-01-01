@@ -8,7 +8,6 @@
   min-width: 0;
   min-height: 20px;
   font-weight: bold;
-  transition-duration: 250ms;
   border-radius: 999px;
 }
 
@@ -24,34 +23,42 @@ window#waybar {
   margin: 6px;
   padding: 6px;
   min-height: 30px;
+  transition:
+    color 250ms ease,
+    background-color 250ms ease;
 }
 
-#power > *:first-child* {
-  min-height: 0px;
-  min-width: 0px;
-  padding:6px; /* waybar centering issue :p (or I am just dumb)*/
-} 
+#power:hover{
+  background: @primary;
+  color: @on_primary;
+}
 
-#power .power-child{
-  background-color: #d8cab8;
-  min-height:30px;
-  min-width: 30px;
+#custom-shutdown{
+  font-size: 18px;
+  min-height: 40px;
+  padding-right:2px; /* waybar centering issue >:( (or I am dumb :P) */
+}
+
+#custom-lock{
+  font-size: 18px;
+  min-height: 40px;
+  padding-right:2px; /* waybar centering issue >:( (or I am dumb :P) */
+}
+
+#custom-sleep{
+  font-size: 18px;
+  min-height: 40px;
+  padding-right:2px; /* waybar centering issue >:( (or I am dumb :P) */
 }
 
 #cpu, 
-#memory,
-#pulseaudio,
-#tray,
-#bluetooth
+#memory
 {
   background: @surface_container_high;
   color: @on_surface;
   margin: 6px;
   padding: 6px;
-  border-style: none;
-
   min-height: 80px;
-
 }
 
 #workspaces {
@@ -69,82 +76,82 @@ window#waybar {
   margin: 6px;
   min-height: 20px;
   min-width: 20px;
-
   border-radius: 999px;
+  transition: min-height 250ms ease;
 }
 
 #workspaces button:hover {
   background: @primary;
 }
+
 #workspaces button.active {
   background: @inverse_primary;
   min-height: 40px;
 }
+
 #workspaces button.urgent {
   background: @tertiary;
 }
 
+#pulseaudio {
+  background: @surface_container_high;
+  color: @on_surface;
+  margin: 6px;
+  padding: 6px;
+  min-height: 60px;
+  transition:
+    background-color 250ms ease,
+    color 250ms ease;
+}
+
 #pulseaudio:hover {
   background: @primary;
-  color: #141216;
+  color: @on_primary;
 }
 
-
-
-#tray menu {
-  background: #141216;
-  color: #d8cab8;
-  padding: 4px;
-}
-
-#tray menu menuitem {
-  background: #27232b;
-
+#network{
+  background: @surface_container_high;
+  color: @on_surface;
   margin: 6px;
-  color: #d8cab8;
-  border-radius: 4px;
-  border-style: solid;
-  border-color: #27232b;
+  min-height: 50px;
+  padding-right: 8px; /* waybar centering issue >:( (or I am dumb :P) */
+  transition: 
+    background-color 250ms ease,
+    color 250ms ease;
 }
 
-#tray menu menuitem:hover {
-  background:#27232b ;
-  color: #ac82e9;
-  font-weight: bold;
+#network:hover{
+  background: @primary;
+  color: @on_primary;
 }
 
 #bluetooth{
-  background: #27232b;
-  color: #d8cab8;
+  background: @surface_container_high;
+  color: @on_surface;
   margin: 6px;
-  padding: 4px 8px;
+  min-height: 60px;
+  transition: 
+    background-color 250ms ease,
+    color 250ms ease;
+}
 
-  border-radius: 15px;
-  border-style: none;
-
-  min-height: 0px;
+#bluetooth:hover{
+  background: @primary;
+  color: @on_primary;
 }
 
 #battery{
-  background: #27232b;
-  color: #d8cab8;
+  background: @surface_container_high;
+  color: @on_surface;
   margin: 6px;
-  padding: 4px 8px;
-
-  border-radius: 15px;
-  border-style: none;
-
+  padding: 6px;
   min-height: 50px;  
 }
 
 #clock{
-  background: #27232b;
-  color: #d8cab8;
+  background: @surface_container_high;
+  color: @on_surface;
   margin: 6px;
-  padding: 4px 8px;
-
-  border-radius: 15px;
-  border-style: none;
-
+  padding: 6px;
   min-height: 50px;
 }

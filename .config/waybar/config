@@ -14,13 +14,11 @@
 
   "modules-right": [
     "pulseaudio",
-    "tray",
+    "network",
     "bluetooth",
     "battery",
     "clock"
   ],
-
-
   
   "cpu": {
     "format": " {}%",
@@ -117,6 +115,11 @@
     "format":"",
     "tooltip":false,
     "on-click": "systemctl suspend"
+  },
+  "network":{
+    "format-disconnected": "",
+    "tooltip-format": "{essid}",
+    "format-wifi": ""
   }
 
 }
