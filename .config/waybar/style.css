@@ -5,23 +5,37 @@
   font-size: 16px;
   padding: 0px;
   background: transparent;
-  min-width: 30px;
+  min-width: 0;
+  min-height: 20px;
   font-weight: bold;
-  
+  transition-duration: 250ms;
+  border-radius: 999px;
 }
 
 window#waybar {
-  background: #141216;
+  background: @surface_container_lowest;
   padding: 0px;
-}
+  border-radius: 0;
+} 
 
 #power{
-  background:#27232b;
-  color: #d8cab8;
+  background:@surface_container_high;
+  color: @on_surface;
   margin: 6px;
-  padding: 4px 8px;
-  border-radius: 15px;
+  padding: 6px;
   min-height: 30px;
+}
+
+#power > *:first-child* {
+  min-height: 0px;
+  min-width: 0px;
+  padding:6px; /* waybar centering issue :p (or I am just dumb)*/
+} 
+
+#power .power-child{
+  background-color: #d8cab8;
+  min-height:30px;
+  min-width: 30px;
 }
 
 #cpu, 
@@ -30,57 +44,49 @@ window#waybar {
 #tray,
 #bluetooth
 {
-  background: #27232b;
-  color: #d8cab8;
+  background: @surface_container_high;
+  color: @on_surface;
   margin: 6px;
-  padding: 4px 8px;
-
-  border-radius: 15px;
+  padding: 6px;
   border-style: none;
 
   min-height: 80px;
 
-  transition-duration: 250ms;
 }
 
 #workspaces {
-  background:#27232b;
-  color: #d8cab8;
+  background: @surface_container_high;
+  color: @on_surface;
   margin: 6px;
-  padding: 4px 8px;
+  padding: 6px;
   font-size: 12px;
-
-  border-radius: 20px;
-  border-style: none;
-
-  min-height: 20px;
+  min-width: 20px;
 }
 
 #workspaces button {
   all: initial; 
-  color: #d8cab8;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  background: @on_surface;
+  margin: 6px;
+  min-height: 20px;
+  min-width: 20px;
+
+  border-radius: 999px;
 }
 
 #workspaces button:hover {
-  transition-duration: 120ms;
-  color: #ac82e9;
+  background: @primary;
 }
 #workspaces button.active {
-  color: #ac82e9;
-  font-weight: bold;
+  background: @inverse_primary;
+  min-height: 40px;
 }
 #workspaces button.urgent {
-  color: #fcb167;
+  background: @tertiary;
 }
 
-
-
 #pulseaudio:hover {
-  background: #ac82e9;
+  background: @primary;
   color: #141216;
-  transition-duration: 120ms;
 }
 
 
@@ -94,7 +100,7 @@ window#waybar {
 #tray menu menuitem {
   background: #27232b;
 
-  margin: 3px;
+  margin: 6px;
   color: #d8cab8;
   border-radius: 4px;
   border-style: solid;
@@ -117,8 +123,6 @@ window#waybar {
   border-style: none;
 
   min-height: 0px;
-
-  transition-duration: 120ms;
 }
 
 #battery{
@@ -130,9 +134,7 @@ window#waybar {
   border-radius: 15px;
   border-style: none;
 
-  min-height: 50px;
-
-  transition-duration: 120ms;  
+  min-height: 50px;  
 }
 
 #clock{
@@ -145,6 +147,4 @@ window#waybar {
   border-style: none;
 
   min-height: 50px;
-
-  transition-duration: 120ms;
 }
