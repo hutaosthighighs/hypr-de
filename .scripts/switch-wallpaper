@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Script I made to switch wallpaper via swww
+# Usage:
+#	switch-wallpaper <wallpaper file name>
+
+WALLPAPER="$1"
+
+WALLPAPER_DIR="$HOME/assets/wallpapers/"
+
+if [[ -z "$WALLPAPER" ]]; then
+	echo "Incorrect syntax: switch-wallpaper <wallpaper-name>"
+	exit 1
+fi
+
+if [[ ! -d "$WALLPAPER_DIR/$WALLPAPER" ]]; then
+	echo "Wallpaper not found"
+	exit 1
+fi
+
+matugen image $WALLAPPER_DIR/$WALLPAPER 2>/dev/null
+
+echo "done?""
