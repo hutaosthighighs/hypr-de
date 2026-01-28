@@ -13,7 +13,7 @@
   ],
 
   "modules-right": [
-    "pulseaudio",
+    "group/audio",
     "network",
     "bluetooth",
     "battery",
@@ -43,6 +43,14 @@
     "format" : ""
   },
 
+  "group/audio":{
+    "orientation": "inherit",
+    "modules": [
+      "pulseaudio",
+      "custom/microphone"
+    ]
+  },
+
   "pulseaudio": {
     "scroll-step": 2,
     "max-volume": 100,
@@ -58,11 +66,13 @@
     "tooltip": false
   },
 
-
-  "tray": {
-    "spacing": 10,
-    "tooltip": false,
-    "rotate" : 270
+  "custom/microphone":{
+    "orientation":"inherit",
+    "tooltip":false,
+    "exec": "~/.scripts/mic-status.sh",
+    "interval":1,
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-double-click": "easyeffects"
   },
 
   "clock": {
@@ -84,7 +94,8 @@
     "format-connected": "\n{device_battery_percentage}",
     "format-on": "",
     "tooltip": false,
-    "on-click":"bluetooth"
+    "on-double-click":"blueman-manager",
+    "interval": 60
   },
   "group/power":{
     "orientation":"inherit",
