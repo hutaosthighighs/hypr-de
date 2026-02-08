@@ -72,12 +72,14 @@ window#waybar {
 
 #workspaces button {
   all: initial; 
-  background: @on_surface;
+  background-color: @on_surface;
   margin: 6px;
   min-height: 20px;
   min-width: 20px;
   border-radius: 999px;
-  transition: min-height 250ms ease;
+  transition: 
+    min-height 250ms ease,
+    background-color 250ms ease;
 }
 
 #workspaces button:hover {

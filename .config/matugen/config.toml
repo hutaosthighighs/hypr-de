@@ -31,10 +31,14 @@ input_path = "./templates/hyprland-template"
 output_path = "~/.config/hypr/visual/colors.conf"
 post_hook = "hyprctl reload"
 
-[templates.css]
+[templates.css-waybar]
 input_path = "./templates/css-template"
 output_path = "~/.config/waybar/colors.css"
 pre_hook = "pkill waybar 2>/dev/null && waybar &"
+
+[templates.rofi]
+input_path = './templates/rofi-template'
+output_path = '~/.config/rofi/colors.rasi'
 
 [templates.kitty]
 input_path = "./templates/kitty-template"
