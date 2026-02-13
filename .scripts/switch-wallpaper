@@ -4,6 +4,8 @@
 # Usage:
 #	switch-wallpaper <wallpaper file name>
 
+#  MADE A REPLACEMENT FOR THIS SCRIPT
+
 WALLPAPER="$1"
 
 WALLPAPER_DIR="$HOME/assets/wallpapers/"
