@@ -1,6 +1,7 @@
 [config]
 version_check = false
 fallback_color = "#ffbf9b"
+prefer = "darkness"
 
 # Enables caching which will cache the colorscheme, custom colors, etc. into a cache folder located in
 # Linux: $XDG_CACHE_HOME/matugen/<file> or $HOME/.cache/matugen/images/<file>
@@ -23,8 +24,7 @@ block_postfix = "*>"
 
 [config.wallpaper]
 set = true
-command = "swww"
-arguments = ["img", "--transition-type", "center"]
+command = "swww img {{image}} --transition-type center"
 
 [templates.hyprland]
 input_path = "./templates/hyprland-template"
