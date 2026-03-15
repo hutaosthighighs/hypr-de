@@ -2,7 +2,7 @@
 
 * {
   font-family: "Maple Mono";
-  font-size: 16px;
+  font-size: 15px;
   padding: 0px;
   background: transparent;
   min-width: 0;
@@ -65,7 +65,7 @@ window#waybar {
   background: @surface_container_high;
   color: @on_surface;
   margin: 6px;
-  padding: 6px;
+  padding: 4px;
   font-size: 12px;
   min-width: 20px;
 }
@@ -73,7 +73,7 @@ window#waybar {
 #workspaces button {
   all: initial; 
   background-color: @on_surface;
-  margin: 6px;
+  margin: 4px;
   min-height: 20px;
   min-width: 20px;
   border-radius: 999px;
