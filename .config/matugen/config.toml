@@ -44,6 +44,11 @@ output_path = '~/.config/rofi/colors.rasi'
 input_path = "./templates/kitty-template"
 output_path = "~/.config/kitty/colors.conf"
 
+[templates.dunst]
+input_path = "./templates/dunst-template"
+output_path = "~/.config/dunst/dunstrc"
+post_hook = "dunstctl reload"
+
 # This will compare all of the colors inside the array with the color you set as `compare_to`, and returns the closest color to it.
 # You can then use `{{closest_color}}` inside hooks.
 #colors_to_compare = [

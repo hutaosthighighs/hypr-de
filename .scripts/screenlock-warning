@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+COUNTDOWN="$1"
+for ((i=$COUNTDOWN; i>0; i--)); do
+	dunstify -r 9876 -h int:value:$((($COUNTDOWN-i)*100/$COUNTDOWN)) "Screen will lock in $i seconds"
+	sleep 1
+done
+dunstctl close 9876

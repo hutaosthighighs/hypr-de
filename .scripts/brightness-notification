@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+BRIGHTNESS=$(brightnessctl g)
+MAX_BRIGHTNESS=$(brightnessctl m)
+BRIGHTNESS_PERCENT=$((BRIGHTNESS * 100 / MAX_BRIGHTNESS))
+
+dunstify -r 5432 -t 2000 -h int:value:$BRIGHTNESS_PERCENT "Brightness $BRIGHTNESS_PERCENT%"
+exit
