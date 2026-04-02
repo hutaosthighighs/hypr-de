@@ -24,7 +24,7 @@ block_postfix = "*>"
 
 [config.wallpaper]
 set = true
-command = "swww img {{image}} --transition-type center"
+command = "awww img {{image}} --transition-type center"
 
 [templates.hyprland]
 input_path = "./templates/hyprland-template"
