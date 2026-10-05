@@ -24,7 +24,7 @@ block_postfix = "*>"
 
 [config.wallpaper]
 set = true
-command = "awww img {{image}} --transition-type center"
+command = "awww img {{image}} --transition-type right"
 
 [templates.hyprland]
 input_path = "./templates/hyprland-template"
@@ -57,6 +57,10 @@ post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings s
 [templates.gtk4]
 input_path = './templates/gtk-template'
 output_path = '~/.themes/adw-gtk3-dark-mod/gtk-4.0/colors.css'
+
+[templates.firefox-website-colors]
+input_path = './templates/firefox-template'
+output_path = '~/.config/mozilla/firefox/ow7ze7n5.default-release/chrome/colors.css'
 
 # This will compare all of the colors inside the array with the color you set as `compare_to`, and returns the closest color to it.
 # You can then use `{{closest_color}}` inside hooks.

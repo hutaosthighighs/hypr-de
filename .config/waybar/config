@@ -92,9 +92,10 @@
   },
   "bluetooth":{
     "format-connected": "\n{device_battery_percentage}",
-    "format-on": "",
+    "format-on": "",
     "tooltip": false,
-    "on-double-click":"blueman-manager",
+    "on-click":"blueman-manager",
+    "on-double-click":"pkill blueman-manager",
     "interval": 60
   },
   "group/power":{

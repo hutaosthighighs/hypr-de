@@ -152,7 +152,7 @@ window#waybar {
   background: @surface_container_high;
   color: @on_surface;
   margin: 6px;
-  min-height: 60px;
+  min-height: 50px;
   transition: 
     background-color 250ms ease,
     color 250ms ease;
