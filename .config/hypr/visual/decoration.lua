@@ -1,0 +1,14 @@
+hl.config({
+    decoration = {
+        rounding = 10,
+        rounding_power = 2,
+        active_opacity = 1.0,
+        inactive_opacity = 1.0,
+        blur = {
+            enabled = true,
+            size = 6,
+            passes = 3,
+            vibrancy = 0.1696,
+        },
+    },
+})
